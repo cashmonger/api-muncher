@@ -1,14 +1,20 @@
 require "httparty"
 
-class EdamanApiWrapper
+class  ApiMuncherWrapper
   BASE_URL = "https://edamam.com/"
 
   def self.get_recipes(search_term)
     puts "Searching for recipes about #{search_term}."
 
-    url = BASE_URL +
-  end
+    url = BASE_URL + "search?q=#{search_term}"
 
+    data = HTTParty.get(url)
+
+    puts data
+  end
+end
+
+    # url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
 # end
 #
 # curl "https://api.edamam.com/""
