@@ -1,12 +1,22 @@
 
 <h1>This is the search results page</h1>
 
+<% @results.each do |result| %>
+<h3><%= result["recipe"]["label"] %></h3>
+<h3><%= result["recipe"]["source"] %></h3>
 
-<h3><%= @results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
-<h3><%= @results.parsed_response["hits"][0]["recipe"]["source"] %></h3>
+<img src="<%= result["recipe"]["image"] %>" >
+<% end %>
 
-<img src="<%= @results.parsed_response["hits"][0]["recipe"]["image"] %>" >
 
+
+<!-- <h3><%#= @results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
+<h3><%#= @results.parsed_response.class %></h3>
+<h3><%#= @results.parsed_response["hits"].class %></h3>
+<h3><%#= @results.parsed_response["hits"][0]["recipe"]["source"] %></h3>
+
+<img src="<%#= @results.parsed_response["hits"][0]["recipe"]["image"] %>" >
+results is now an array  -->
 <!--
 { "q" : "cheese", "from" : 0, "to" : 5,
   _______________

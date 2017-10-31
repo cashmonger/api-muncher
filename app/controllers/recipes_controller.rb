@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
 
 
   def search
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term])
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term]).parsed_response["hits"]
   end
 
   def new
