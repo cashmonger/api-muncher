@@ -6,14 +6,14 @@ class  ApiMuncherWrapper
   def self.get_recipes(search_term)
     puts "Searching for recipes about #{search_term}."
 
-    url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=20"
+    url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=100"
 
     data = HTTParty.get(url)
-
-    return data
+    results = data.parsed_response["hits"]
+    return results
   end
 end
-
+# @results = ApiMuncherWrapper.get_recipes(params[:search_term]).parsed_response["hits"].offset(@page * 10)
     # url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
 # end
 #
