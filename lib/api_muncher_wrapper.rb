@@ -6,11 +6,11 @@ class  ApiMuncherWrapper
   def self.get_recipes(search_term)
     puts "Searching for recipes about #{search_term}."
 
-    url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=100"
+    url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=5"
 
     data = HTTParty.get(url)
 
-    puts data
+    return data
   end
 end
 

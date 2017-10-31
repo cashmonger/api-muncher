@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
 
 
   def index
-
+    # @results = ApiMuncherWrapper.get_recipes(params[:search_term])
   end
 
 
