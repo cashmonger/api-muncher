@@ -2,8 +2,10 @@
 <h1>This is the search results page</h1>
 
 
-<h3><%= @results %></h3>
+<h3><%= @results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
+<h3><%= @results.parsed_response["hits"][0]["recipe"]["source"] %></h3>
 
+<img src="<%= @results.parsed_response["hits"][0]["recipe"]["image"] %>" >
 
 <!--
 { "q" : "cheese", "from" : 0, "to" : 5,
