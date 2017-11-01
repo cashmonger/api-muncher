@@ -19,6 +19,16 @@ Class: <%= result.class %>
 <h3><%= result.uri.class %></h3>
 
 
+INDEX STUFF THAT WORKS:
+
+<% @results.each_with_index do |result, index| %>
+
+<h3><%= link_to result.label, recipe_path(result.short_uri) %></h3>
+
+<h3><%= result.source %></h3>
+
+<img src="<%= result.image %>" >
+<% end %>
 
 
 

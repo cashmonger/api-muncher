@@ -2,17 +2,25 @@
 
 
 
+http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH
+
+<h1>Here are your results!</h1>
+
+<div class="row small-up-2 medium-up-3">
+
 <% @results.each_with_index do |result, index| %>
 
-
-
-<h3><%= link_to result.label, recipe_path(result.short_uri) %></h3>
-
-<h3><%= result.source %></h3>
-
-<img src="<%= result.image %>" >
+  <div class="column">
+    <div class="card">
+      <img src="<%= result.image %>">
+      <div class="card-section">
+        <h4><%= link_to result.label, recipe_path(result.short_uri) %></h4>
+        <p><%= result.source %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
-
+</div>
 
 <!-- results (hits) is an array, so here you're going through each piece of the array,
 recipe is the key to a hash,

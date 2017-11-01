@@ -3,15 +3,12 @@ require "httparty"
 class  ApiMuncherWrapper
   BASE_URL = "https://edamam.com/"
 
-  def self.get_recipes(search_term)
+  def self.get_recipes(search_term, first: 0, last:  10)
     puts "Searching for recipes about #{search_term}."
-    url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=5"
+    # url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=5"
+    url = BASE_URL + "search?q=#{search_term}" + "&from=#{first}" + "&to=#{last}"
     data = HTTParty.get(url)
-    # if data["hits"]
-    #   return data["hits"]
-    # else
-    #   return []
-    # end
+
     recipe_list = []
     if data["hits"]
       data["hits"].each do |hit|
@@ -28,18 +25,13 @@ class  ApiMuncherWrapper
     puts "Searching for specific recipe"
     # puts URI.encode(uri)
     puts "#{id}"
-# "https://edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a"
+
     search_uri = "http://www.edamam.com/ontologies/edamam.owl" + "\#" + "#{id}"
-    # binding.pry
-    # url = BASE_URL + "search?r=#{search_uri}"
+
     url = BASE_URL + "search?r=#{URI.encode(search_uri)}"
     # url = BASE_URL + "search?r=#{uri}"
     data = HTTParty.get(url).parsed_response
-    # if data["hits"]
-    #   return data["hits"]
-    # else
-    #   return []
-    # end
+
     return data
   end
 
@@ -64,12 +56,13 @@ class  ApiMuncherWrapper
 
 end #class
 
-
+# binding.pry
+# url = BASE_URL + "search?r=#{search_uri}"
 # For channels:
 # parsed_response = {"channels => [id=>1, name=>value, etc. ]"}
 #
 # when you use the data[channel], it starts from id, i.e. from the array, because you've out channels into the data
-
+# "https://edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a"
 # "https://edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a"
 # For recipes
 #
@@ -87,8 +80,16 @@ end #class
 #      "https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg",
 #     "source"=>"Leite's Culinaria",
 #     "url"=>
-
-
+# if data["hits"]
+#   return data["hits"]
+# else
+#   return []
+# end
+# if data["hits"]
+#   return data["hits"]
+# else
+#   return []
+# end
 
 
 

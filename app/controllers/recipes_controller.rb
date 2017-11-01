@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term])
   end
 
-
   def search
     @results = ApiMuncherWrapper.get_recipes(params[:search_term])
     #results is an array of recipe objects.
@@ -16,11 +15,14 @@ class RecipesController < ApplicationController
     @result = ApiMuncherWrapper.show_recipe(params[:id])
   end
 
+  def next_page
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term, :first, :last])
+  end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:search_term, :uri, :short_uri, :id)
+    params.require(:recipe).permit(:search_term, :uri, :short_uri, :id, :first, :last)
   end
 
   def set_page

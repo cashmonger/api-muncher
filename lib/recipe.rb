@@ -15,14 +15,14 @@ class Recipe
     @ingredientLines = options[:ingredientLines]
   end
 
-  # def display_recipe
-  #   @short_uri = @uri.split('#')[1]
-  # end
+end
+
+# def display_recipe
+#   @short_uri = @uri.split('#')[1]
+# end
 # No route matches [GET] "/recipes/
 #
 # http:%2F%2Fwww.edamam.com %2F ontologies%2Fedamam.owl %23recipe_57d41c954296c7332ee57e3f6bc6f99a"
-
-end
 
 # not encoded URI
 # ("http://www.edamam.com/ontologies/edamam.owl  # recipe_57d41c954296c7332ee57e3f6bc6f99a")
