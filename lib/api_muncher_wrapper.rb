@@ -28,11 +28,11 @@ class  ApiMuncherWrapper
     puts "Searching for specific recipe"
     # puts URI.encode(uri)
     puts "#{id}"
-
-    search_uri = "http://www.edamam.com/ontologies/edamam.owl" + "#{id}"
-    binding.pry
-    url = BASE_URL + "search?r=#{search_uri}"
-    # url = BASE_URL + "search?r=#{URI.encode(uri)}"
+# "https://edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a"
+    search_uri = "http://www.edamam.com/ontologies/edamam.owl" + "\#" + "#{id}"
+    # binding.pry
+    # url = BASE_URL + "search?r=#{search_uri}"
+    url = BASE_URL + "search?r=#{URI.encode(search_uri)}"
     # url = BASE_URL + "search?r=#{uri}"
     data = HTTParty.get(url).parsed_response
     # if data["hits"]

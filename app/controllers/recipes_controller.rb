@@ -13,18 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-
-    # binding.pry
-    # @uri = result.uri
-
-    # @uri = params[:id]
-    # binding.pry
-    # @uri = params[:id]
-
     @result = ApiMuncherWrapper.show_recipe(params[:id])
-
-    # def get_category
-    # @category = Category.find_by(id: params[:id])
   end
 
 
@@ -38,3 +27,13 @@ class RecipesController < ApplicationController
     @page = params[:page] || 0
   end
 end
+
+# def get_category
+# @category = Category.find_by(id: params[:id])
+
+    # binding.pry
+    # @uri = result.uri
+
+    # @uri = params[:id]
+    # binding.pry
+    # @uri = params[:id]

@@ -4,24 +4,12 @@
 
 <% @results.each_with_index do |result, index| %>
 
-<% test_uri = result.short_uri %>
-<%= test_uri %>
+
 
 <h3><%= link_to result.label, recipe_path(result.short_uri) %></h3>
 
-Class: <%= result.class %>
-<%= result.inspect %>
-
-<%= form_tag recipe_path(result), method: "get" do %>
-<%= hidden_field_tag :uri, result.uri %>
-<%= submit_tag(result.label) %>
-<% end %>
-
-<h3><%= result.class %></h3>
-<h3>Index: <%= index %></h3>
 <h3><%= result.source %></h3>
-<h3><%= result.uri %> </h3>
-<h3><%= result.uri.class %></h3>
+
 <img src="<%= result.image %>" >
 <% end %>
 
