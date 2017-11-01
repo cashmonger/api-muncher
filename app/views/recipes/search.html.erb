@@ -1,16 +1,24 @@
 
-<h1>This is the search results page</h1>
-
 
 
 
 <% @results.each_with_index do |result, index| %>
 
-<h3><%= link_to result.label, recipe_path(index) %></h3>
+<h3><%= link_to result.label, recipe_path(result) %></h3>
+
+<%= form_tag recipe_path(result), method: "get" do %>
+<%= hidden_field_tag :uri, result.uri %>
+<%= submit_tag(result.label) %>
+<% end %>
+
+<h3><%= result.class %></h3>
 <h3>Index: <%= index %></h3>
 <h3><%= result.source %></h3>
+<h3><%= result.uri %> </h3>
+<h3><%= result.uri.class %></h3>
 <img src="<%= result.image %>" >
 <% end %>
+
 
 <!-- results (hits) is an array, so here you're going through each piece of the array,
 recipe is the key to a hash,

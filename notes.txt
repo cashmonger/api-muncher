@@ -1,0 +1,98 @@
+<h1>This is the Show Page</h1>
+
+<td>
+  <%= form_for Vote.new do |f| %>
+  <%= f.hidden_field :work_id, value: work.id %>
+  <%= f.hidden_field :user_id, value: session[:logged_in_user] %>
+  <%= f.submit class: "button"%>
+  <% end %>
+</td>
+<%= form_tag search_path, method: "get" do %>
+  <%= label_tag(:search, "Enter Search Term") %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("SEARCH") %>
+<% end %>
+
+
+
+
+=> #<HTTParty::Response:0x7fafd5d48a50 parsed_response=[{"uri"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a", "label"=>"Baked Eggs", "image"=>"https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg", "source"=>"Leite's Culinaria", "url"=>"http://leitesculinaria.com/96610/recipes-baked-eggs.html", "shareAs"=>"http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/-", "yield"=>6.0, "dietLabels"=>["Low-Carb", "Low-Sodium"], "healthLabels"=>["Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["Vegetable oil or butter, for the muffin tin", "6 large eggs (choose eggs of a very similar size)", "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "1/4 cup grated Parmesan (optional)", "Salt and freshly ground black pepper, to taste"], "ingredients"=>[{"text"=>"Vegetable oil or butter, for the muffin tin", "quantity"=>0.0, "measure"=>nil, "food"=>"Vegetable oil or butter", "weight"=>4.274870217132568}, {"text"=>"6 large eggs (choose eggs of a very similar size)", "quantity"=>6.0, "measure"=>"<unit>", "food"=>"large eggs", "weight"=>300.0}, {"text"=>"2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "quantity"=>2.0, "measure"=>"tablespoon", "food"=>"bacon", "weight"=>14.328692436218262}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"Salt", "weight"=>1.8859721546173096}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"freshly ground black pepper", "weight"=>0.9429860773086548}], "calories"=>528.9073952325267, "totalWeight"=>320.11947449308, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>528.9073952325267, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>38.522669591187864, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>11.574606112353218, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>0.16584541550557708, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>16.5[2] pry(main)> @result = ApiMuncherWrapper.show_recipe("http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a")
+Searching for specific recipe
+=> #<HTTParty::Response:0x7fafd5c5b250 parsed_response=[{"uri"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a", "label"=>"Baked Eggs", "image"=>"https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg", "source"=>"Leite's Culinaria", "url"=>"http://leitesculinaria.com/96610/recipes-baked-eggs.html", "shareAs"=>"http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/-", "yield"=>6.0, "dietLabels"=>["Low-Carb", "Low-Sodium"], "healthLabels"=>["Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"], "cautions"=>[], "ingredientLines"=>["Vegetable oil or butter, for the muffin tin", "6 large eggs (choose eggs of a very similar size)", "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "1/4 cup grated Parmesan (optional)", "Salt and freshly ground black pepper, to taste"], "ingredients"=>[{"text"=>"Vegetable oil or butter, for the muffin tin", "quantity"=>0.0, "measure"=>nil, "food"=>"Vegetable oil or butter", "weight"=>4.274870217132568}, {"text"=>"6 large eggs (choose eggs of a very similar size)", "quantity"=>6.0, "measure"=>"<unit>", "food"=>"large eggs", "weight"=>300.0}, {"text"=>"2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)", "quantity"=>2.0, "measure"=>"tablespoon", "food"=>"bacon", "weight"=>14.328692436218262}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"Salt", "weight"=>1.8859721546173096}, {"text"=>"Salt and freshly ground black pepper, to taste", "quantity"=>0.0, "measure"=>nil, "food"=>"freshly ground black pepper", "weight"=>0.9429860773086548}], "calories"=>528.9073952325267, "totalWeight"=>320.11947449308, "totalNutrients"=>{"ENERC_KCAL"=>{"label"=>"Energy", "quantity"=>528.9073952325267, "unit"=>"kcal"}, "FAT"=>{"label"=>"Fat", "quantity"=>38.522669591187864, "unit"=>"g"}, "FASAT"=>{"label"=>"Saturated", "quantity"=>11.574606112353218, "unit"=>"g"}, "FATRN"=>{"label"=>"Trans", "quantity"=>0.16584541550557708, "unit"=>"g"}, "FAMS"=>{"label"=>"Monounsaturated", "quantity"=>16.5[3] pry(main)> @result.class
+=> HTTParty::Response
+[4] pry(main)> @result.count
+=> 1
+
+Parsed Response is an array which contains a hash
+Label
+Image
+Source
+URL
+shareAs
+yield
+dietLabels (array)
+healthLabels (array)
+cautions
+ingredientLines
+
+[5] pry(main)> @result.parsed_response
+=> [{"uri"=>
+   "http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a",
+  "label"=>"Baked Eggs",
+  "image"=>
+   "https://www.edamam.com/web-img/7c0/7c06d6352abacc41e169a954ebc3740e.jpg",
+  "source"=>"Leite's Culinaria",
+  "url"=>
+   "http://leitesculinaria.com/96610/recipes-baked-eggs.html",
+  "shareAs"=>
+   "http://www.edamam.com/recipe/baked-eggs-57d41c954296c7332ee57e3f6bc6f99a/-",
+  "yield"=>6.0,
+  "dietLabels"=>
+   ["Low-Carb", "Low-Sodium"],
+  "healthLabels"=>
+   ["Peanut-Free",
+    "Tree-Nut-Free",
+    "Soy-Free",
+    "Fish-Free",
+    "Shellfish-Free"],
+  "cautions"=>[],
+  "ingredientLines"=>
+   ["Vegetable oil or butter, for the muffin tin",
+    "6 large eggs (choose eggs of a very similar size)",
+    "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)",
+    "1/4 cup grated Parmesan (optional)",
+    "Salt and freshly ground black pepper, to taste"],
+  "ingredients"=>
+   [{"text"=>
+      "Vegetable oil or butter, for the muffin tin",
+     "quantity"=>0.0,
+     "measure"=>nil,
+     "food"=>"Vegetable oil or butter",
+     "weight"=>4.274870217132568},
+    {"text"=>
+      "6 large eggs (choose eggs of a very similar size)",
+     "quantity"=>6.0,
+     "measure"=>"<unit>",
+     "food"=>"large eggs",
+     "weight"=>300.0},
+    {"text"=>
+      "2 tablespoons chopped, slightly undercooked bacon (figure 2 slices)",
+     "quantity"=>2.0,
+     "measure"=>"tablespoon",
+     "food"=>"bacon",
+     "weight"=>14.328692436218262},
+    {"text"=>
+      "Salt and freshly ground black pepper, to taste",
+     "quantity"=>0.0,
+     "measure"=>nil,
+     "food"=>"Salt",
+     "weight"=>1.8859721546173096},
+    {"text"=>
+      "Salt and freshly ground black pepper, to taste",
+     "quantity"=>0.0,
+     "measure"=>nil,
+     "food"=>"freshly ground black pepper",
+     "weight"=>0.9429860773086548}],
+  "calories"=>528.9073952325267,
+  "totalWeight"=>320.11947449308,
+  "totalNutrients"=>

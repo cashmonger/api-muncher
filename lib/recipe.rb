@@ -1,14 +1,14 @@
 class Recipe
-  attr_reader :label, :source, :image
+  attr_reader :uri, :label, :source, :image
 
-  def initialize(label, source, image, options = {} )
+  def initialize(uri, label, source, image, options = {} )
     # raise ArgumentError if label == nil || name == "" || id == nil || id == ""
 
     @label = label
     @source = source
     @image = image
+    @uri = uri
 
-    @uri = options[:uri]
     @url = options[:url]
     @shareAs = options[:shareAs]
     @ingredientLines = options[:ingredientLines]
@@ -19,7 +19,7 @@ class Recipe
   end
 end
 
-Returns information about a specific recipe based on its ID ie. -r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2 This or the q parameter are required
+# Returns information about a specific recipe based on its ID ie. -r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2 This or the q parameter are required
 
 # ingredientLines
 

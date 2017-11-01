@@ -27,7 +27,8 @@ class  ApiMuncherWrapper
   def self.show_recipe(uri)
     puts "Searching for specific recipe"
     url = BASE_URL + "search?r=#{URI.encode(uri)}"
-    data = HTTParty.get(url)
+    # url = BASE_URL + "search?r=#{uri}"
+    data = HTTParty.get(url).parsed_response
     # if data["hits"]
     #   return data["hits"]
     # else
@@ -37,20 +38,23 @@ class  ApiMuncherWrapper
   end
 
 
-private
+  private
 
-def self.create_recipe(api_params)
-  return Recipe.new(
-    api_params["label"],
-    api_params["source"],
-    api_params["image"],
-    {
-      url: api_params["url"],
-      shareAs: api_params["shareAs"],
-      ingredientLines: api_params["ingredientLines"]
-    }
-  )
-end #method
+  def self.create_recipe(api_params)
+    return Recipe.new(
+      api_params["uri"],
+      api_params["label"],
+      api_params["source"],
+      api_params["image"],
+
+      {
+        # uri: api_params["uri"],
+        url: api_params["url"],
+        shareAs: api_params["shareAs"],
+        ingredientLines: api_params["ingredientLines"]
+      }
+    )
+  end #method
 
 end #class
 
