@@ -6,10 +6,10 @@
 
 <% @results.each_with_index do |result, index| %>
 
-<h3><%= link_to result["recipe"]["label"], recipe_path(index) %></h3>
+<h3><%= link_to result.label, recipe_path(index) %></h3>
 <h3>Index: <%= index %></h3>
-<h3><%= result["recipe"]["source"] %></h3>
-<img src="<%= result["recipe"]["image"] %>" >
+<h3><%= result.source %></h3>
+<img src="<%= result.image %>" >
 <% end %>
 
 <!-- results (hits) is an array, so here you're going through each piece of the array,

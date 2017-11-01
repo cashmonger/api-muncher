@@ -8,13 +8,22 @@ class RecipesController < ApplicationController
 
   def search
     @results = ApiMuncherWrapper.get_recipes(params[:search_term])
-
+    #results is an array of recipe objects.
     # .parsed_response["hits"].offset(@page * 10)
   end
 
   def show
-    binding.pry 
+    binding.pry
     @results = ApiMuncherWrapper.get_recipes(params[:search_term])[index]
+    def get_category
+  @category = Category.find_by(id: params[:id])
+end
+
+def category_params
+  return params.require(:category).permit(:category_name)
+end
+
+
   end
 
   def new
