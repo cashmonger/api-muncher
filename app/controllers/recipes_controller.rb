@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-before_action :set_page, only: [:index]
+  before_action :set_page, only: [:index]
 
   def index
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term])
@@ -7,8 +7,14 @@ before_action :set_page, only: [:index]
 
 
   def search
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term]).offset(@page.to_i * 10)
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term])
+
     # .parsed_response["hits"].offset(@page * 10)
+  end
+
+  def show
+    binding.pry 
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term])[index]
   end
 
   def new
@@ -16,8 +22,11 @@ before_action :set_page, only: [:index]
 
   def create
   end
-
-end
+  # def find_book_by_params_id
+  #   @book = Book.find_by(id: params[:id])
+  #   unless @book
+  #     head :not_found
+  #   end
 
 private
 
@@ -28,26 +37,4 @@ end
 def set_page
   @page = params[:page] || 0
 end
-
-# def index
-#   @channels = SlackApiWrapper.list_channels
-# end
-#
-# def new
-#   @channel = params[:channel]
-# end
-#
-# def create
-#   response = SlackApiWrapper.send_msg(params[:channel], params[:message])
-#
-#   if response
-#     flash[:status] = "success"
-#     flash[:message] = "Message Posted Successfully"
-#   else
-#     flash[:status] = "error"
-#     flash[:message] = "Error Sending Message"
-#   end
-#
-#   redirect_to root_path
-# end
-# end
+end

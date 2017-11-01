@@ -1,16 +1,22 @@
 
 <h1>This is the search results page</h1>
 
-<% @results.each do |result| %>
-<h3><%= result["recipe"]["label"] %></h3>
-<h3><%= result["recipe"]["source"] %></h3>
 
+
+
+<% @results.each_with_index do |result, index| %>
+
+<h3><%= link_to result["recipe"]["label"], recipe_path(index) %></h3>
+<h3>Index: <%= index %></h3>
+<h3><%= result["recipe"]["source"] %></h3>
 <img src="<%= result["recipe"]["image"] %>" >
 <% end %>
 
-
-
-<!-- <h3><%#= @results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
+<!-- results (hits) is an array, so here you're going through each piece of the array,
+recipe is the key to a hash,
+label, source etc. are keys in the inner hash -->
+<!-- recipe GET    /recipes/:id(.:format)      recipes#show -->
+<!-- <h3><%#= <h3><%= result["recipe"]["label"] %></h3>@results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
 <h3><%#= @results.parsed_response.class %></h3>
 <h3><%#= @results.parsed_response["hits"].class %></h3>
 <h3><%#= @results.parsed_response["hits"][0]["recipe"]["source"] %></h3>
