@@ -13,37 +13,19 @@ class RecipesController < ApplicationController
   end
 
   def show
-    binding.pry
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term])[index]
-    def get_category
-  @category = Category.find_by(id: params[:id])
-end
-
-def category_params
-  return params.require(:category).permit(:category_name)
-end
-
-
+    @result = ApiMuncherWrapper.show_recipe(params[:uri])
+    # def get_category
+    # @category = Category.find_by(id: params[:id])
   end
 
-  def new
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:search_term)
   end
 
-  def create
+  def set_page
+    @page = params[:page] || 0
   end
-  # def find_book_by_params_id
-  #   @book = Book.find_by(id: params[:id])
-  #   unless @book
-  #     head :not_found
-  #   end
-
-private
-
-def recipe_params
-  params.require(:recipe).permit(:search_term)
-end
-
-def set_page
-  @page = params[:page] || 0
-end
 end

@@ -24,6 +24,18 @@ class  ApiMuncherWrapper
     return recipe_list
   end #method
 
+  def self.show_recipe(uri)
+    puts "Searching for specific recipe"
+    url = BASE_URL + "search?r=#{URI.encode(uri)}"
+    data = HTTParty.get(url)
+    # if data["hits"]
+    #   return data["hits"]
+    # else
+    #   return []
+    # end
+    return data
+  end
+
 
 private
 
@@ -48,13 +60,14 @@ end #class
 #
 # when you use the data[channel], it starts from id, i.e. from the array, because you've out channels into the data
 
-
+# "https://edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a"
 # For recipes
-
-
-
-
-
+#
+#
+# https://api.edamam.com/search/q=
+# https://api.edamam.com/search/r=http://www.edamam.com/ontologies/edamam.owl#recipe_57d41c954296c7332ee57e3f6bc6f99a
+#
+#
 
 #with the data: => [{"recipe"=>
 #    {"uri"=>

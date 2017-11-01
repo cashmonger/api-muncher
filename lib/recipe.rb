@@ -8,12 +8,18 @@ class Recipe
     @source = source
     @image = image
 
-
+    @uri = options[:uri]
     @url = options[:url]
     @shareAs = options[:shareAs]
     @ingredientLines = options[:ingredientLines]
   end
+
+  def display_recipe
+
+  end
 end
+
+Returns information about a specific recipe based on its ID ie. -r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2 This or the q parameter are required
 
 # ingredientLines
 
