@@ -13,11 +13,15 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # @uri = URI.encode(params["uri"])
+
     # binding.pry
-    @uri = params[:uri]
-    binding.pry
-    @result = ApiMuncherWrapper.show_recipe(params[:uri])
+    # @uri = result.uri
+
+    # @uri = params[:id]
+    # binding.pry
+    # @uri = params[:id]
+
+    @result = ApiMuncherWrapper.show_recipe(params[:id])
 
     # def get_category
     # @category = Category.find_by(id: params[:id])
@@ -27,7 +31,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:search_term, :uri)
+    params.require(:recipe).permit(:search_term, :uri, :short_uri, :id)
   end
 
   def set_page

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root 'recipes#index'
 
   get 'recipes/search', to: 'recipes#search', as: 'search'
+  # get 'recipes/show/:uri', to: 'recipes', as: 'recipe'
+  # resources :recipes, except: [:show]
   resources :recipes
-
 
 end
 

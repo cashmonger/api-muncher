@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :uri, :label, :source, :image
+  attr_reader :uri, :label, :source, :image, :short_uri
 
   def initialize(uri, label, source, image, options = {} )
     # raise ArgumentError if label == nil || name == "" || id == nil || id == ""
@@ -8,16 +8,29 @@ class Recipe
     @source = source
     @image = image
     @uri = uri
+    @short_uri = @uri.split('#')[1]
 
     @url = options[:url]
     @shareAs = options[:shareAs]
     @ingredientLines = options[:ingredientLines]
   end
 
-  def display_recipe
+  # def display_recipe
+  #   @short_uri = @uri.split('#')[1]
+  # end
+# No route matches [GET] "/recipes/
+#
+# http:%2F%2Fwww.edamam.com %2F ontologies%2Fedamam.owl %23recipe_57d41c954296c7332ee57e3f6bc6f99a"
 
-  end
 end
+
+# not encoded URI
+# ("http://www.edamam.com/ontologies/edamam.owl  # recipe_57d41c954296c7332ee57e3f6bc6f99a")
+# routes match URI
+# "/recipes/http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl %23 [recipe_57d41c954296c7332ee57e3f6bc6f99a"]
+# encoded URI
+# http://www.edamam.com/ontologies/edamam.owl    %23 recipe_57d41c954296c7332ee57e3f6bc6f99a
+
 
 # Returns information about a specific recipe based on its ID ie. -r=http://www.edamam.com/ontologies/edamam.owl%23recipe_637913ec61d9da69eb451818c3293df2 This or the q parameter are required
 

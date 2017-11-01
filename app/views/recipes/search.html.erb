@@ -4,7 +4,13 @@
 
 <% @results.each_with_index do |result, index| %>
 
-<h3><%= link_to result.label, recipe_path(result) %></h3>
+<% test_uri = result.short_uri %>
+<%= test_uri %>
+
+<h3><%= link_to result.label, recipe_path(result.short_uri) %></h3>
+
+Class: <%= result.class %>
+<%= result.inspect %>
 
 <%= form_tag recipe_path(result), method: "get" do %>
 <%= hidden_field_tag :uri, result.uri %>

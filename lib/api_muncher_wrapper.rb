@@ -24,9 +24,15 @@ class  ApiMuncherWrapper
     return recipe_list
   end #method
 
-  def self.show_recipe(uri)
+  def self.show_recipe(id)
     puts "Searching for specific recipe"
-    url = BASE_URL + "search?r=#{URI.encode(uri)}"
+    # puts URI.encode(uri)
+    puts "#{id}"
+
+    search_uri = "http://www.edamam.com/ontologies/edamam.owl" + "#{id}"
+    binding.pry
+    url = BASE_URL + "search?r=#{search_uri}"
+    # url = BASE_URL + "search?r=#{URI.encode(uri)}"
     # url = BASE_URL + "search?r=#{uri}"
     data = HTTParty.get(url).parsed_response
     # if data["hits"]
