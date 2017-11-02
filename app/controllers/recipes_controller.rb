@@ -9,15 +9,14 @@ class RecipesController < ApplicationController
 
   def search
     @search_term = params[:search_term]
-    @first = (params[:first]) ? params[:first].to_i : 0
-    binding.pry
+    @from = (params[:from]) ? params[:from].to_i : 0
     # if a params first is present, then set first equal to that, otherwise set it equal to 0
     #if you've already set it, set it to what it was, if not, set it to 0
-    @previous = @first - 10
-    @first = @first + 10
+    @previous = @from - 10
+    @from = @from + 10
 
     #increase by 10
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @first)
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from)
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from)
     #results is an array of recipe objects.
     # .parsed_response["hits"].offset(@page * 10)
@@ -34,7 +33,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:search_term, :uri, :short_uri, :id, :first, :last)
+    params.require(:recipe).permit(:search_term, :uri, :short_uri, :id, :first, :last, :from)
   end
 
   def set_page
