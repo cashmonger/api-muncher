@@ -5,8 +5,20 @@ class RecipesController < ApplicationController
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term])
   end
 
+
+
   def search
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term])
+    @search_term = params[:search_term]
+    @first = (params[:first]) ? params[:first].to_i : 0
+    binding.pry
+    # if a params first is present, then set first equal to that, otherwise set it equal to 0
+    #if you've already set it, set it to what it was, if not, set it to 0
+    @previous = @first - 10
+    @first = @first + 10
+
+    #increase by 10
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @first)
+    # @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from)
     #results is an array of recipe objects.
     # .parsed_response["hits"].offset(@page * 10)
   end
@@ -33,9 +45,32 @@ end
 # def get_category
 # @category = Category.find_by(id: params[:id])
 
-    # binding.pry
-    # @uri = result.uri
+# binding.pry
+# @uri = result.uri
 
-    # @uri = params[:id]
-    # binding.pry
-    # @uri = params[:id]
+# @uri = params[:id]
+# binding.pry
+# @uri = params[:id]
+
+#   if params[:search]
+#     @recipes = RecipeApiWrapper.search(params[:search], @from)
+#   else
+#     @recipes = nil
+#   end
+# end
+# def self.search(food, from, app_id=APP_ID)
+#   url = BASE_URL + "?q=#{food}" + "&from=#{from}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+#   response = HTTParty.get(url)
+#
+#   check_status(response)
+#
+#   recipe_list = []
+#   if response["hits"]
+#     response["hits"].each do |raw_recipe|
+#       recipe_list << self.create_recipe(raw_recipe["recipe"])
+#     end
+#   end
+#
+#   return recipe_list
+# end
+# RecipeApiWrapper.search(params[:search], @from)

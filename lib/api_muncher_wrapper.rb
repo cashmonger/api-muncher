@@ -1,12 +1,14 @@
 require "httparty"
+# , first: 0, last:  10
 
 class  ApiMuncherWrapper
   BASE_URL = "https://edamam.com/"
 
-  def self.get_recipes(search_term, first: 0, last:  10)
+  def self.get_recipes(search_term, first)
     puts "Searching for recipes about #{search_term}."
+    # url = BASE_URL + "search?q=#{search_term}" + "&from=0"
     # url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=5"
-    url = BASE_URL + "search?q=#{search_term}" + "&from=#{first}" + "&to=#{last}"
+    url = BASE_URL + "search?q=#{search_term}" + "&from=#{first}"
     data = HTTParty.get(url)
 
     recipe_list = []

@@ -1,6 +1,12 @@
 
 
+<div class="pagination">
+  <% if @first > 10 %>
+    <%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous), class: "button" %>
+  <% end %>
 
+  <%= link_to "Next Page", search_path(search_term: @search_term, from: @first), class: "button" %>
+</div>
 
 <!-- http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH -->
 
