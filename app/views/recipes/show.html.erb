@@ -1,3 +1,17 @@
-<h1>This is the Show Page</h1>
 
-<%= @result.inspect%>
+
+
+
+<h1><%= link_to @result[0]["label"], @result[0]["shareAs"] %></h1>
+
+
+
+<img src="<%= @result[0]["image"] %>">
+<h4><%= @result[0]["source"] %></h4>
+
+
+<% @result[0]["ingredientLines"].each do |ingredient| %>
+<p>
+  <%= ingredient %>
+</p>
+<% end %>

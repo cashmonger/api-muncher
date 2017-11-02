@@ -15,9 +15,9 @@ class RecipesController < ApplicationController
     @result = ApiMuncherWrapper.show_recipe(params[:id])
   end
 
-  def next_page
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term, :first, :last])
-  end
+  # def next_page
+  #   @results = ApiMuncherWrapper.get_recipes(params[:search_term, :first, :last])
+  # end
 
   private
 
