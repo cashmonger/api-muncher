@@ -10,9 +10,18 @@ describe ApiMuncherWrapper do
         result.each do |recipe|
           recipe.must_be_kind_of Recipe
         end #each
-      end #user casset
+      end #use cassette
     end #get list
   end #get recipies
+
+  describe "show_recipe" do
+    it "Will show an individual recipe" do
+      VCR.user_cassette("recipes")
+      result = ApiMuncherWrapper.show_recipe("id")
+    end
+  end
+end
+
 end #all tests
 
 # describe "send_msg" do
