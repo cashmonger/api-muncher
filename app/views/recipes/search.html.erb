@@ -8,6 +8,11 @@
   <%= link_to "Next Page", search_path(search_term: @search_term, from: @from), class: "button" %>
 </div>
 
+<nav>
+  <%= page_entries_info @results %>
+  <%= will_paginate @results %>
+</nav>
+
 <!-- http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH -->
 
 <h1>Here are your results!</h1>
@@ -18,9 +23,13 @@
 
   <div class="column">
     <div class="card">
-      <img src="<%= result.image %>">
-      <div class="card-section">
+      <div class="card-divider">
         <h4><%= link_to result.label, recipe_path(result.short_uri) %></h4>
+      </div>
+      <div class="card-section">
+        <img src="<%= result.image %>">
+      </div>
+      <div class="card-section">
         <p><%= result.source %></p>
       </div>
     </div>

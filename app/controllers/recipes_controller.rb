@@ -1,5 +1,7 @@
+require 'will_paginate/array'
+
 class RecipesController < ApplicationController
-  before_action :set_page, only: [:index]
+  # before_action :set_page, only: [:index]
 
   def index
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term])
@@ -16,10 +18,11 @@ class RecipesController < ApplicationController
     @from = @from + 10
 
     #increase by 10
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from)
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from).paginate(:page => params[:page], per_page: 2)
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from)
     #results is an array of recipe objects.
     # .parsed_response["hits"].offset(@page * 10)
+
   end
 
   def show
