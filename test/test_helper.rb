@@ -5,6 +5,7 @@ require "minitest/rails"
 require "minitest/reporters"  # for Colorized output
 require 'vcr'
 require 'webmock/minitest'
+
 #  For colorful output!
 Minitest::Reporters.use!(
   Minitest::Reporters::SpecReporter.new,
