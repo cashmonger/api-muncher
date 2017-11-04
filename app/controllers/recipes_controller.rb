@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
     @from = @from + 10
 
     #increase by 10
-    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from).paginate(:page => params[:page], per_page: 2)
+    @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from).paginate(:page => params[:page], per_page: 10)
     # @results = ApiMuncherWrapper.get_recipes(params[:search_term], @from)
     #results is an array of recipe objects.
     # .parsed_response["hits"].offset(@page * 10)

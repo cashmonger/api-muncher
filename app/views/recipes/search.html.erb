@@ -1,25 +1,55 @@
 
+<div class="row">
 
-<div class="pagination">
-  <% if @from > 10 %>
-    <%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous), class: "button" %>
-  <% end %>
+  <div class="small-12 medium-6 large-3 columns">
 
-  <%= link_to "Next Page", search_path(search_term: @search_term, from: @from), class: "button" %>
+  </div>
+
+
+  <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+    <% if @from > 10 %>
+  <li><%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous), class: "button" %></li>
+    <% end %>
+
+    <!-- <li class="pagination-previous disabled">Previous</li> -->
+    <li class="current"><span class="show-for-sr">You're on page</span>1</li>
+
+    <li><%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
+    <li><%= link_to "3", search_path(search_term: @search_term, from: 20)%></li>
+    <li><%= link_to "4", search_path(search_term: @search_term, from: 30)%></li>
+    <li><%= link_to "5", search_path(search_term: @search_term, from: 40)%></li>
+    <li><%= link_to "6", search_path(search_term: @search_term, from: 50)%></li>
+    <li><%= link_to "7", search_path(search_term: @search_term, from: 60)%></li>
+    <li><%= link_to "8", search_path(search_term: @search_term, from: 70)%></li>
+    <li><%= link_to "9", search_path(search_term: @search_term, from: 80)%></li>
+
+    <li><%= link_to "Next Page", search_path(search_term: @search_term, from: @from)%></li>
+    <!-- <li class="pagination-next"></li> -->
+  </ul>
+
+
+  <div class="small-12 medium-6 large-3 columns">
+
+
+  </div>
+
 </div>
+<!--
+<div class="row" >
+  <div class="small-12">
+    <%#= page_entries_info @results %>
+    <%#= will_paginate @results %>
+  </div>
+</div> -->
 
-<nav>
-  <%= page_entries_info @results %>
-  <%= will_paginate @results %>
-</nav>
 
 <!-- http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH -->
 
 <h1>Here are your results!</h1>
 
-<div class="row small-up-2 medium-up-3">
+<div class="row small-up-1 medium-up-3">
 
-<% @results.each_with_index do |result, index| %>
+  <% @results.each_with_index do |result, index| %>
 
   <div class="column">
     <div class="card">
@@ -34,7 +64,7 @@
       </div>
     </div>
   </div>
-<% end %>
+  <% end %>
 </div>
 
 <!-- results (hits) is an array, so here you're going through each piece of the array,
@@ -50,64 +80,64 @@ label, source etc. are keys in the inner hash -->
 results is now an array  -->
 <!--
 { "q" : "cheese", "from" : 0, "to" : 5,
-  _______________
+_______________
 "params" : { "sane" : [ ], "q" : [ "cheese" ], "from" : [ "0" ], "to" : [ "5" ]},
 ___________________
-  "more" : true, "count" : 122033, "hits" : [ {
-    "recipe" : {
-      "uri" : "http://www.edamam.com/ontologies/edamam.owl#recipe_421df807e21c65c842ec62870604aed3",
-      "label" : "Three-Cheese Grilled Cheese",
-      "image" : "https://www.edamam.com/web-img/01d/01dd082e4d080d5b9bb56e205c768190.jpg",
-      "source" : "Leite's Culinaria",
-      "url" : "http://leitesculinaria.com/83135/recipes-three-cheese-grilled-cheese.html",
-      "shareAs" : "http://www.edamam.com/recipe/three-cheese-grilled-cheese-421df807e21c65c842ec62870604aed3/cheese",
-      "yield" : 4.0,
-      "dietLabels" : [ "Low-Carb" ],
-      "healthLabels" : [ "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free" ],
-      "cautions" : [ ],
-      "ingredientLines" : [ "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)", "1 cup packed, shredded whole-milk mozzarella", "4 teaspoons fresh thyme, minced (optional)", "8 tablespoons freshly grated Parmesan", "4 tablespoons crumbled goat cheese", "4 thin slices smoked ham", "4 tablespoons (2 ounces) butter" ],
-      "ingredients" : [ {
-        "text" : "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)",
-        "quantity" : 8.0,
-        "measure" : "slice",
-        "food" : "baguette, cut",
-        "weight" : 80.0
-      }, {
-        "text" : "1 cup packed, shredded whole-milk mozzarella",
-        "quantity" : 1.0,
-        "measure" : "cup",
-        "food" : "packed, shredded whole-milk mozzarella",
-        "weight" : 112.0
-      }, {
-        "text" : "8 tablespoons freshly grated Parmesan",
-        "quantity" : 8.0,
-        "measure" : "tablespoon",
-        "food" : "freshly grated Parmesan",
-        "weight" : 113.44000244140625
-      }, {
-        "text" : "4 tablespoons crumbled goat cheese",
-        "quantity" : 4.0,
-        "measure" : "tablespoon",
-        "food" : "crumbled goat cheese",
-        "weight" : 45.648929595947266
-      }, {
-        "text" : "4 thin slices smoked ham",
-        "quantity" : 4.0,
-        "measure" : "slice",
-        "food" : "smoked ham",
-        "weight" : 52.0
-      }, {
-        "text" : "4 tablespoons (2 ounces) butter",
-        "quantity" : 4.0,
-        "measure" : "tablespoon",
-        "food" : "butter",
-        "weight" : 56.69904708862305
-      } ],
-      "calories" : 1588.7701513290406,
-      "totalWeight" : 459.78797912597656,
-      "totalNutrients" : {
-        "ENERC_KCAL" : {
-          "label" : "Energy",
-          "quantity" : 1588.7701513290406,
-          "unit" : "kcal"
-        }, -->
+"more" : true, "count" : 122033, "hits" : [ {
+"recipe" : {
+"uri" : "http://www.edamam.com/ontologies/edamam.owl#recipe_421df807e21c65c842ec62870604aed3",
+"label" : "Three-Cheese Grilled Cheese",
+"image" : "https://www.edamam.com/web-img/01d/01dd082e4d080d5b9bb56e205c768190.jpg",
+"source" : "Leite's Culinaria",
+"url" : "http://leitesculinaria.com/83135/recipes-three-cheese-grilled-cheese.html",
+"shareAs" : "http://www.edamam.com/recipe/three-cheese-grilled-cheese-421df807e21c65c842ec62870604aed3/cheese",
+"yield" : 4.0,
+"dietLabels" : [ "Low-Carb" ],
+"healthLabels" : [ "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free" ],
+"cautions" : [ ],
+"ingredientLines" : [ "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)", "1 cup packed, shredded whole-milk mozzarella", "4 teaspoons fresh thyme, minced (optional)", "8 tablespoons freshly grated Parmesan", "4 tablespoons crumbled goat cheese", "4 thin slices smoked ham", "4 tablespoons (2 ounces) butter" ],
+"ingredients" : [ {
+"text" : "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)",
+"quantity" : 8.0,
+"measure" : "slice",
+"food" : "baguette, cut",
+"weight" : 80.0
+}, {
+"text" : "1 cup packed, shredded whole-milk mozzarella",
+"quantity" : 1.0,
+"measure" : "cup",
+"food" : "packed, shredded whole-milk mozzarella",
+"weight" : 112.0
+}, {
+"text" : "8 tablespoons freshly grated Parmesan",
+"quantity" : 8.0,
+"measure" : "tablespoon",
+"food" : "freshly grated Parmesan",
+"weight" : 113.44000244140625
+}, {
+"text" : "4 tablespoons crumbled goat cheese",
+"quantity" : 4.0,
+"measure" : "tablespoon",
+"food" : "crumbled goat cheese",
+"weight" : 45.648929595947266
+}, {
+"text" : "4 thin slices smoked ham",
+"quantity" : 4.0,
+"measure" : "slice",
+"food" : "smoked ham",
+"weight" : 52.0
+}, {
+"text" : "4 tablespoons (2 ounces) butter",
+"quantity" : 4.0,
+"measure" : "tablespoon",
+"food" : "butter",
+"weight" : 56.69904708862305
+} ],
+"calories" : 1588.7701513290406,
+"totalWeight" : 459.78797912597656,
+"totalNutrients" : {
+"ENERC_KCAL" : {
+"label" : "Energy",
+"quantity" : 1588.7701513290406,
+"unit" : "kcal"
+}, -->
