@@ -1,18 +1,12 @@
 <%= render 'layouts/header' %>
 
-<div class="row">
-
-  <div class="small-12 medium-6 large-3 columns">
-
-  </div>
-
 <nav>
 
 
   <ul class="pagination text-center" role="navigation" aria-label="Pagination">
 
     <% if @from > 10 %>
-  <li><%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous), class: "button" %></li>
+  <li id="next"><%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous), class: "button" %></li>
     <% end %>
 
     <!-- <li class="pagination-previous disabled">Previous</li> -->
@@ -27,17 +21,11 @@
     <li><%= link_to "8", search_path(search_term: @search_term, from: 70)%></li>
     <li><%= link_to "9", search_path(search_term: @search_term, from: 80)%></li>
 
-    <li><%= link_to "Next Page", search_path(search_term: @search_term, from: @from)%></li>
+    <li id="next"><%= link_to "Next Page", search_path(search_term: @search_term, from: @from)%></li>
     <!-- <li class="pagination-next"></li> -->
   </ul>
 </nav>
 
-  <div class="small-12 medium-6 large-3 columns">
-
-
-  </div>
-
-</div>
 <!--
 <div class="row" >
   <div class="small-12">
