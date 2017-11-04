@@ -1,3 +1,15 @@
+<header>
+  <div class="top-bar-right">
+    <ul class="menu">
+
+      <%= form_tag search_path, method: "get" do %>
+      <li>  <%= label_tag(:search, "Enter Search Term") %></li>
+      <li>  <%= text_field_tag(:search_term, @search_term) %></li>
+      <%= submit_tag("SEARCH") %>
+      <% end %>
+    </ul>
+  </div>
+</header>
 
 <div class="row">
 
@@ -45,7 +57,7 @@
 
 <!-- http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH -->
 
-<h1>Here are your results!</h1>
+
 
 <div class="row small-up-1 medium-up-3">
 
@@ -54,7 +66,7 @@
   <div class="column">
     <div class="card">
       <div class="card-divider">
-        <h4><%= link_to result.label, recipe_path(result.short_uri) %></h4>
+        <h6><%= link_to result.label, recipe_path(result.short_uri) %></h6>
       </div>
       <div class="card-section">
         <img src="<%= result.image %>">
