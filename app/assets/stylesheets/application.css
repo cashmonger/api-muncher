@@ -18,21 +18,41 @@
 
  @import url('https://fonts.googleapis.com/css?family=Courgette');
 
+
+  h3 {
+    text-align: center;
+  }
+
+  h6 {
+    text-align: center;
+  }
+
+
  h3#main-title {
    font-family: 'Courgette', cursive;
+   text-align: left;
  }
 
+
+ li#next {
+   border-radius: 25%;
+ }
+
+ .card {
+   text-align: center;
+ }
  #left {
    border: 2px solid blue;
+   clear: left;
    float: left;
    width: 30%;
  }
 
  #right {
    border: 2px solid red;
-   clear: left;
-  float: right;
-  width: 50%;
+   clear: right;
+   float: right;
+   width: 40%;
 }
  .recipe-search {
    border: 1px solid green;
@@ -45,8 +65,9 @@
 
  footer {
    background-color: grey;
+   clear: both;
    color: white;
-   position: absolute;
+   /*position: absolute;*/
    bottom: 0;
    width: 100%;
    height: 3em}

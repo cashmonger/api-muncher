@@ -1,31 +1,36 @@
 <%= render 'layouts/header' %>
 
 
-
+<div class="row-column">
+  <h3><%= link_to @result[0]["label"], @result[0]["shareAs"], :target => "_blank" %></h3>
+</div>
 
 
 <div class="row">
-  <div class="column">
-    <div class="card">
 
-      <div class="card-divider">
-        <h3><%= link_to @result[0]["label"], @result[0]["shareAs"], :target => "_blank" %></h3>
-      </div>
+  <div class="small-12 medium-6 large-3 columns">
 
-      <div class="card-section" id="left">
-        <img src="<%= @result[0]["image"] %>">
-      </div>
+    <figure>
+      <img src="<%= @result[0]["image"] %>">
+      <figcaption>
+        Courtesy: <%= @result[0]["source"] %>
+      </figcaption>
+    </figure>
+  </div>
 
-      <div class="card-section" id="right">
-        <h4>Ingredients</h4>
+  <div class="small-12 medium-6 large-9 columns">
+    <div class="ingedients">
+
+      
+      <h4>Ingredients</h4>
+
+      <ul>
         <% @result[0]["ingredientLines"].each do |ingredient| %>
-        <ul>
-          <li><%= ingredient %></li>
-          <% end %>
-          <li><%= @result[0]["source"] %></li>
-        </ul>
-      </div>
-
+        <li><%= ingredient %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
+
+
 </div>

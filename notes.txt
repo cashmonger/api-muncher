@@ -1,3 +1,52 @@
+
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+
+      <div class="card-divider">
+        <h3><%= link_to @result[0]["label"], @result[0]["shareAs"], :target => "_blank" %></h3>
+      </div>
+
+      <div class="card-section" id="left">
+        <img src="<%= @result[0]["image"] %>">
+      </div>
+
+      <div class="card-section" id="right">
+        <h4>Ingredients</h4>
+        <% @result[0]["ingredientLines"].each do |ingredient| %>
+        <ul>
+          <li><%= ingredient %></li>
+          <% end %>
+          <li><%= @result[0]["source"] %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="row" >
+  <div class="small-12">
+    <%#= page_entries_info @results %>
+    <%#= will_paginate @results %>
+  </div>
+</div> -->
+
+
+<!-- http://localhost:3000/recipes/search?utf8=%E2%9C%93&search_term=cheese&commit=SEARCH -->
+
+
+
+
+
+
+
+
+
+
 <h1>This is the Show Page</h1>
 
 <% test_uri = result.short_uri %>
@@ -31,6 +80,80 @@ INDEX STUFF THAT WORKS:
 <% end %>
 
 
+<!-- results (hits) is an array, so here you're going through each piece of the array,
+recipe is the key to a hash,
+label, source etc. are keys in the inner hash -->
+<!-- recipe GET    /recipes/:id(.:format)      recipes#show -->
+<!-- <h3><%#= <h3><%= result["recipe"]["label"] %></h3>@results.parsed_response["hits"][0]["recipe"]["label"] %></h3>
+<h3><%#= @results.parsed_response.class %></h3>
+<h3><%#= @results.parsed_response["hits"].class %></h3>
+<h3><%#= @results.parsed_response["hits"][0]["recipe"]["source"] %></h3>
+
+<img src="<%#= @results.parsed_response["hits"][0]["recipe"]["image"] %>" >
+results is now an array  -->
+<!--
+{ "q" : "cheese", "from" : 0, "to" : 5,
+_______________
+"params" : { "sane" : [ ], "q" : [ "cheese" ], "from" : [ "0" ], "to" : [ "5" ]},
+___________________
+"more" : true, "count" : 122033, "hits" : [ {
+"recipe" : {
+"uri" : "http://www.edamam.com/ontologies/edamam.owl#recipe_421df807e21c65c842ec62870604aed3",
+"label" : "Three-Cheese Grilled Cheese",
+"image" : "https://www.edamam.com/web-img/01d/01dd082e4d080d5b9bb56e205c768190.jpg",
+"source" : "Leite's Culinaria",
+"url" : "http://leitesculinaria.com/83135/recipes-three-cheese-grilled-cheese.html",
+"shareAs" : "http://www.edamam.com/recipe/three-cheese-grilled-cheese-421df807e21c65c842ec62870604aed3/cheese",
+"yield" : 4.0,
+"dietLabels" : [ "Low-Carb" ],
+"healthLabels" : [ "Egg-Free", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free" ],
+"cautions" : [ ],
+"ingredientLines" : [ "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)", "1 cup packed, shredded whole-milk mozzarella", "4 teaspoons fresh thyme, minced (optional)", "8 tablespoons freshly grated Parmesan", "4 tablespoons crumbled goat cheese", "4 thin slices smoked ham", "4 tablespoons (2 ounces) butter" ],
+"ingredients" : [ {
+"text" : "8 slices baguette, cut on the diagonal (each about 1/3 inch thick and 3 inches from end to end)",
+"quantity" : 8.0,
+"measure" : "slice",
+"food" : "baguette, cut",
+"weight" : 80.0
+}, {
+"text" : "1 cup packed, shredded whole-milk mozzarella",
+"quantity" : 1.0,
+"measure" : "cup",
+"food" : "packed, shredded whole-milk mozzarella",
+"weight" : 112.0
+}, {
+"text" : "8 tablespoons freshly grated Parmesan",
+"quantity" : 8.0,
+"measure" : "tablespoon",
+"food" : "freshly grated Parmesan",
+"weight" : 113.44000244140625
+}, {
+"text" : "4 tablespoons crumbled goat cheese",
+"quantity" : 4.0,
+"measure" : "tablespoon",
+"food" : "crumbled goat cheese",
+"weight" : 45.648929595947266
+}, {
+"text" : "4 thin slices smoked ham",
+"quantity" : 4.0,
+"measure" : "slice",
+"food" : "smoked ham",
+"weight" : 52.0
+}, {
+"text" : "4 tablespoons (2 ounces) butter",
+"quantity" : 4.0,
+"measure" : "tablespoon",
+"food" : "butter",
+"weight" : 56.69904708862305
+} ],
+"calories" : 1588.7701513290406,
+"totalWeight" : 459.78797912597656,
+"totalNutrients" : {
+"ENERC_KCAL" : {
+"label" : "Energy",
+"quantity" : 1588.7701513290406,
+"unit" : "kcal"
+}, -->
 
 
 
