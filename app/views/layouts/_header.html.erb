@@ -1,0 +1,14 @@
+<header class="top-bar">
+  <div class="top-bar-left" >
+    <h1>Especially Recipes</h1>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <%= form_tag search_path, method: "get" do %>
+      <li>  <%= label_tag(:search, "Enter Search Term") %></li>
+      <li>  <%= text_field_tag(:search_term, @search_term) %></li>
+      <%= submit_tag("SEARCH") %>
+      <% end %>
+    </ul>
+  </div>
+</header>

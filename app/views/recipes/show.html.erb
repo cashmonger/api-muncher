@@ -1,15 +1,4 @@
-<header>
-<div class="top-bar-right">
-  <ul class="menu">
-
-    <%= form_tag search_path, method: "get" do %>
-    <li>  <%= label_tag(:search, "Enter Search Term") %></li>
-    <li>  <%= text_field_tag(:search_term, @search_term) %></li>
-    <%= submit_tag("SEARCH") %>
-    <% end %>
-  </ul>
-</div>
-</header>
+<%= render 'layouts/header' %>
 
 
 <h1><%= link_to @result[0]["label"], @result[0]["shareAs"] %></h1>
@@ -25,3 +14,5 @@
   <%= ingredient %>
 </p>
 <% end %>
+
+<%= @result[0][]
