@@ -1,7 +1,8 @@
+<% provide(:title, "Show Recipe") %>
 <%= render 'layouts/header' %>
 
 
-<div class="row-column">
+<div class="row-column recipe-link">
   <h3 id="main-link"><%= link_to @result.label, @result.shareAs, :target => "_blank" %></h3>
 </div>
 
