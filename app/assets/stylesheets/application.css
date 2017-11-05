@@ -1,103 +1,108 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
 
- */
+*/
 
- @import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+body {
+  background-color: #241c11;
+}
+
+h3 h6 {
+  text-align: center;
+}
+
+h3#main-title {
+  font-family: 'Courgette', cursive;
+  text-align: left;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
+}
+
+li#next {
+  border-radius: 25%;
+}
+
+/*main search page */
+
+.hero-section {
+  background-color: orange;
+  background: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb") 50% no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;*/
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.hero-section .hero-section-text {
+  border: 1px solid green;
+  color: #fefefe;
+  font-family: 'Courgette', cursive;
+  padding-top: 30px;
+  /*text-shadow: 1px 1px 2px #0a0a0a;*/
+}
+
+.hero-section .recipe-search {
+  border: 2px solid purple;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 30%;
+}
+
+/*search results page */
+.card {
+  text-align: center;
+}
 
 
-  h3 {
-    text-align: center;
-  }
+/*show page */
 
-  h6 {
-    text-align: center;
-  }
-
-
- h3#main-title {
-   font-family: 'Courgette', cursive;
-   text-align: left;
- }
-
- h1 {
-    font-family: 'Courgette', cursive;
- }
-
- li#next {
-   border-radius: 25%;
- }
-
- .hero-section {
-   background-color: orange;
-   background: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb") 50% no-repeat;
-   background-size: cover;
-   height: 100vh;
-   text-align: center;
-   display: -webkit-flex;
-   display: -ms-flexbox;
-   display: flex;
-   /*-webkit-align-items: center;
-       -ms-flex-align: center;
-           align-items: center;*/
-   -webkit-justify-content: center;
-       -ms-flex-pack: center;
-           justify-content: center;
- }
-
- .hero-section .hero-section-text {
-   border: 1px solid green;
-   color: #fefefe;
-   font-family: 'Courgette', cursive;
-   padding-top: 30px;
-   /*text-shadow: 1px 1px 2px #0a0a0a;*/
- }
-
- .hero-section .recipe-search {
-   border: 2px solid purple;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 0;
-   width: 30%;
- }
-
- .card {
-   text-align: center;
- }
- #left {
-   border: 2px solid blue;
-   clear: left;
-   float: left;
-   width: 30%;
- }
-
- #right {
-   border: 2px solid red;
-   clear: right;
-   float: right;
-   width: 40%;
+.ingredients {
+  /*color: white;*/
+  color: #fdbc6a;
 }
 
 
 
- footer {
-   background-color: grey;
-   clear: both;
-   color: white;
-   /*position: absolute;*/
-   bottom: 0;
-   width: 100%;
-   height: 3em}
+
+/*footer*/
+
+
+
+
+
+
+/*
+footer {
+background-color: grey;
+clear: both;
+color: white;
+/*position: absolute;*/
+/*bottom: 0;
+width: 100%;
+height: 3em}*/

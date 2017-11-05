@@ -69,17 +69,34 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
+// primary: #1779ba,
+// secondary: #767676,
+
+  primary: #671d01,
+  secondary: #fdbc6a,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
+// $light-gray: #e9e8e7;
+$light-gray: #fee4c3;
+
+
+$medium-gray: #bdbab7;
+$dark-gray: #7b7670;
+
+
+
+
+$black: #241c11;
 $white: #fefefe;
+
+// $light-gray: #e6e6e6;
+// $medium-gray: #cacaca;
+// $dark-gray: #8a8a8a;
+// $black: #0a0a0a;
+// $black: #241c11;
+// $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
 // $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -528,7 +545,8 @@ $orbit-control-zindex: 10;
 
 $pagination-font-size: rem-calc(14);
 $pagination-margin-bottom: $global-margin;
-$pagination-item-color: $black;
+// $pagination-item-color: $black;
+$pagination-item-color: $white;
 $pagination-item-padding: rem-calc(3 10);
 $pagination-item-spacing: rem-calc(1);
 // $pagination-radius: $global-radius;

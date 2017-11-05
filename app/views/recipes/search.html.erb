@@ -10,7 +10,7 @@
 
     <!-- <li class="pagination-previous disabled">Previous</li> -->
     <li class="current"><span class="show-for-sr">You're on page</span>1</li>
-    <li><%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
+    <li class="current"><%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
     <li><%= link_to "3", search_path(search_term: @search_term, from: 20)%></li>
     <li><%= link_to "4", search_path(search_term: @search_term, from: 30)%></li>
     <li><%= link_to "5", search_path(search_term: @search_term, from: 40)%></li>
@@ -31,13 +31,13 @@
   <div class="column">
     <div class="card">
       <div class="card-divider">
-        <h6><%= link_to result.label.truncate(35), recipe_path(result.short_uri) %></h6>
+        <h6><%= link_to result.label.truncate(25), recipe_path(result.short_uri) %></h6>
       </div>
       <div class="card-section">
         <img src="<%= result.image %>">
       </div>
       <div class="card-section">
-        <p><%= result.source %></p>
+        <p>Source: <%= result.source %></p>
       </div>
     </div>
   </div>
