@@ -19,29 +19,23 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 
 body {
-  background-color: #241c11;
+  background-color:
+  #150b02;
+   /*#241c11;*/
 }
-
-/*figure {
-  border: 2px solid green;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: auto;
-  padding-right: auto;
-}*/
 
 figure img {
   margin-left: 15%;
   margin-right: auto;
-
 }
 /*header */
 
 header {
-  border: 3px dotted pink;
+  background-color: #7b644f;
 }
+
 .top-bar {
-  border: 2px solid orange;
+  background-color: #7b644f;
 }
 
 .search-bar {
@@ -54,7 +48,6 @@ header {
   border: 2px solid red;
   display: inline;
 }
-
 
 
 h1#main-title {
@@ -75,13 +68,8 @@ h6 {
 
 /*main search page */
 
-.form-button {
-  background-color: orange;
-  color: blue;
-}
-
 .hero-section {
-  background-color: orange;
+  background-color: #671d01;
   background: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb") 50% no-repeat;
   background-size: cover;
   height: 100vh;
@@ -116,6 +104,7 @@ h6 {
 }
 
 /*search results page */
+
 .card {
   text-align: center;
 }
@@ -137,13 +126,10 @@ h6 {
   margin-top: 1rem;
 }
 
-/*li#next {
-  border-radius: 25%;
-}*/
 
 /*show page */
 
-h3 #main-link {
+h3#main-link {
   color: #fdbc6a;
   text-align: center;
 }
@@ -153,15 +139,12 @@ h3 #main-link {
 }
 
 
-
-
 /*footer*/
 
 .stick {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
 }
 
 header, nav, footer {
@@ -171,8 +154,6 @@ header, nav, footer {
 main {
   flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
 }
-
-
 
 .footer-bottom {
   background-color: #0b0300;
@@ -187,10 +168,30 @@ main {
   width: 50%;
 }
 
-/*.marketing-site-footer-bottom p*/
-
 #edamam-badge {
   clear: right;
   float: right;
   width: 25%;
 }
+
+
+
+
+
+/*.input-group-rounded .input-group-field {
+  border-radius: 5000px 0 0 5000px;
+  padding-left: 1rem;
+}
+
+.input-group-rounded .input-group-button .button {
+  border-radius: 0 5000px 5000px 0;
+  font-size: 0.8rem;
+}*/
+
+/*figure {
+  border: 2px solid green;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+}*/
