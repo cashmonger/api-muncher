@@ -24,10 +24,7 @@ body {
    /*#241c11;*/
 }
 
-figure img {
-  margin-left: 15%;
-  margin-right: auto;
-}
+
 /*header */
 
 header {
@@ -35,31 +32,26 @@ header {
 }
 
 .top-bar {
+  border: 3px solid black;
   background-color: #7b644f;
 }
 
-.search-bar {
-  background-color: pink;
-  border: 2px solid black;
-  width: 500px;
+.input-group-rounded .input-group-field {
+  border: 6px solid green;
+  border-radius: 5000px 0 0 5000px;
+  padding-left: 1rem;
 }
 
-.search-bar li {
-  border: 2px solid red;
-  display: inline;
+.input-group-rounded .input-group-button .button {
+  border: 6px solid red;
+  border-radius: 0 5000px 5000px 0;
+  font-size: 0.8rem;
 }
 
-
-h1#main-title {
-  font-family: 'Courgette', cursive;
-  text-align: center;
-}
-
-h3#main-title {
+h2#main-title {
   border: 1px solid green;
   font-family: 'Courgette', cursive;
   text-align: left;
-  width: 30%;
 }
 
 h6 {
@@ -67,6 +59,11 @@ h6 {
 }
 
 /*main search page */
+
+h1#main-title {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+}
 
 .hero-section {
   background-color: #671d01;
@@ -86,7 +83,7 @@ h6 {
 }
 
 .hero-section .hero-section-text {
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   color: #fefefe;
   padding-top: 30px;
 }
@@ -96,7 +93,7 @@ h6 {
 }
 
 .hero-section .recipe-search {
-  border: 2px solid purple;
+  /*border: 2px solid purple;*/
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -129,16 +126,33 @@ h6 {
 
 /*show page */
 
-h3#main-link {
+#main-link a {
+  border: 3px solid red;
   color: #fdbc6a;
+  margin: auto;
   text-align: center;
 }
+
+/*#main-link h3 {
+  color: #fdbc6a;
+  text-align: center;
+}*/
 
 .ingredients {
   color: #fdbc6a;
 }
 
+figure img {
+  margin-left: 15%;
+  margin-right: auto;
+}
 
+figure figcaption {
+  color: #fdbc6a;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 /*footer*/
 
 .stick {
@@ -173,25 +187,3 @@ main {
   float: right;
   width: 25%;
 }
-
-
-
-
-
-/*.input-group-rounded .input-group-field {
-  border-radius: 5000px 0 0 5000px;
-  padding-left: 1rem;
-}
-
-.input-group-rounded .input-group-button .button {
-  border-radius: 0 5000px 5000px 0;
-  font-size: 0.8rem;
-}*/
-
-/*figure {
-  border: 2px solid green;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: auto;
-  padding-right: auto;
-}*/

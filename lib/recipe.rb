@@ -13,8 +13,8 @@ class Recipe
     @url = options[:url]
     @shareAs = options[:shareAs]
     @ingredientLines = options[:ingredientLines]
-    @calories = options[:calories]
-    @amount = options[:yield]
+    @calories = options[:calories].to_i
+    @amount = options[:yield].to_i
     @dietLabels = options[:dietLabels]
     @healthLabels = options[:healthLabels]
   end
