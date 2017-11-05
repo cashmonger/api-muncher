@@ -16,11 +16,13 @@ describe ApiMuncherWrapper do
 
   describe "show_recipe" do
     it "Will show an individual recipe" do
-      VCR.use_cassette("recipes")
-      result = ApiMuncherWrapper.show_recipe("id")
+      VCR.use_cassette("individual_recipe") do
+        result = ApiMuncherWrapper.show_recipe("recipe_id")
+        result.must_be_kind_of Recipe
+        result.length.must_be 1
+      end
     end
   end
-end
 
 end #all tests
 

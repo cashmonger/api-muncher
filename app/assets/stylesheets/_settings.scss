@@ -323,7 +323,7 @@ $buttongroup-radius-on-each: true;
 // 13. Callout
 // -----------
 
-$callout-background: $white;
+$callout-background: $alert-color;
 $callout-background-fade: 85%;
 $callout-border: 1px solid rgba($black, 0.25);
 $callout-margin: 0 0 1rem 0;
@@ -336,10 +336,10 @@ $callout-link-tint: 30%;
 // 14. Card
 // --------
 
-$card-background: $white;
+$card-background: $light-gray;
 $card-font-color: $body-font-color;
-$card-divider-background: $light-gray;
-$card-border: 1px solid $light-gray;
+$card-divider-background: $primary-color;
+$card-border: 1px solid $primary-color;
 $card-shadow: none;
 $card-border-radius: $global-radius;
 $card-padding: $global-padding;

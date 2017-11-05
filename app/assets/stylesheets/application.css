@@ -24,7 +24,15 @@ body {
    /*#241c11;*/
 }
 
+a {
+  text-align: center;
+  color: #fdbc6a;
+}
 
+h3 {
+  text-align: center;
+  color: #fdbc6a;
+}
 /*header */
 
 header {
@@ -36,17 +44,6 @@ header {
   background-color: #7b644f;
 }
 
-.input-group-rounded .input-group-field {
-  border: 6px solid green;
-  border-radius: 5000px 0 0 5000px;
-  padding-left: 1rem;
-}
-
-.input-group-rounded .input-group-button .button {
-  border: 6px solid red;
-  border-radius: 0 5000px 5000px 0;
-  font-size: 0.8rem;
-}
 
 h2#main-title {
   border: 1px solid green;
@@ -98,6 +95,10 @@ h1#main-title {
   width: 35%;
 }
 
+.flash-status {
+  color: red;
+}
+
 /*search results page */
 
 .card {
@@ -105,7 +106,6 @@ h1#main-title {
 }
 
 .card-divider {
-  border: 2px solid green;
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -123,28 +123,16 @@ h1#main-title {
 
 /*show page */
 
-#main-link a {
-  border: 3px solid red;
-  color: #fdbc6a;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  float: center;
-  text-align: center;
-  width: 100%;
+.link-background {
+  border: 3px solid orange;
 }
 
-/*.recipe-link {
-  border: 3px solid orange;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-}*/
-
-/*#main-link h3 {
+#mainlink {
+  border: 6px solid red;
   color: #fdbc6a;
+  margin-top: 5px;
   text-align: center;
-}*/
+}
 
 .ingredients {
   color: #fdbc6a;

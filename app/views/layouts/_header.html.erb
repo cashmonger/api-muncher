@@ -1,20 +1,17 @@
 <header class=row>
   <div class="small-12 medium-6 large-6 columns">
     <h2 id="main-title">Especially Recipes</h2>
+    
   </div>
 
     <div class="small-12 medium-6 large-6 columns">
-      <div class="input-group-rounded .input-group-field" >
+      <div>
         <%= form_tag search_path, method: "get" do %>
           <%= text_field_tag(:search_term, @search_term)%>
-          <div class="input-group-rounded .input-group-button .button">
+          <div>
             <%= submit_tag("Search Again", class: "button") %>
           </div>
         <% end %>
       </div>
     </div>
-
-
-
-
 </header>
