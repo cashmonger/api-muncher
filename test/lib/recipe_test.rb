@@ -1,65 +1,66 @@
 require 'test_helper'
-class Recipe
-  attr_reader :uri, :label, :source, :image, :short_uri
 
-  def initialize(uri, label, source, image, options = {} )
-    # raise ArgumentError if label == nil || name == "" || id == nil || id == ""
 
-    @label = label
-    @source = source
-    @image = image
-    @uri = uri
-    @short_uri = @uri.split('#')[1]
 
-    @url = options[:url]
-    @shareAs = options[:shareAs]
-    @ingredientLines = options[:ingredientLines]
-  end
-
-end
 describe Recipe do
 
-  it "Can be instantiated with a name and ID" do
-    Channel.new("name", "id")
-  end
+  it "Can be instantiated with a label and a uri" do
+    Recipe.new("label", "uri")
+  end #can be instantiated
 
-  it "Requires a name and ID" do
+  it "Requires a label and a uri" do
     proc {
-      Channel.new()
+      Recipe.new()
     }.must_raise ArgumentError
 
     proc {
-      Channel.new("name")
+      Recipe.new("label")
+    }.must_raise ArgumentError
+
+    proc {
+      Recipe.new("uri")
     }.must_raise ArgumentError
 
     # Empty strings are not permitted either
     proc {
-      Channel.new("", "")
+      Recipe.new("", "")
     }.must_raise ArgumentError
-  end
+  end #requirements
 
-  it "Tracks name and ID" do
-    name = "test_name"
-    id = "test_id"
-    chan = Channel.new(name, id)
-    chan.name.must_equal name
-    chan.id.must_equal id
-  end
+  it "Tracks label and uri" do
+    label = "test_label"
+    uri = "test_uri"
+    result = Recipe.new(uri, label)
+    result.label.must_equal label
+    result.uri.must_equal uri
+  end #tracks label and uri
 
   it "Tracks optional args" do
+
+    label = "test_label"
+    uri = "test_uri"
+
     options = {
-      purpose: "test_purpose",
-      is_archived: "test_archived",
-      is_general: "test_general",
-      members: "test_members"
+
+      image: "test_image",
+      source: "test_source",
+      shareAs: "test_members",
+      ingredientLines: "ingredient_lines",
+      calories: 12,
+      amount: 0,
+      dietLabels: "diet_labels",
+      healthLabels: "health_labels"
     }
-    chan = Channel.new("name", "id", options)
 
-    chan.purpose.must_equal options[:purpose]
-    chan.is_archived.must_equal options[:is_archived]
-    chan.is_general.must_equal options[:is_general]
-    chan.members.must_equal options[:members]
-  end
+    result = Recipe.new(uri, label, options)
 
-
-end
+    result.image.must_equal options[:image]
+    result.source.must_equal options[:source]
+    result.shareAs.must_equal options[:shareAs]
+    result.ingredientLines.must_equal options[:ingredientLines]
+    result.calories.must_equal options[:calories]
+    result.amount.must_equal options[:amount]
+    result.dietLabels.must_equal options[:dietLabels]
+    result.healthLabels.must_equal options[:healthLabels]
+  end #tracks optionals
+end #all tests

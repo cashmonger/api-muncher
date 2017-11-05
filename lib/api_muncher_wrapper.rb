@@ -1,12 +1,10 @@
 require "httparty"
-# , first: 0, last:  10
 
 class  ApiMuncherWrapper
   BASE_URL = "https://edamam.com/"
 
   def self.get_recipes(search_term, from)
     puts "Searching for recipes about #{search_term}."
-    # url = BASE_URL + "search?q=#{search_term}" + "&from=0"
     # url = BASE_URL + "search?q=#{search_term}" + "&from=0" + "&to=5"
     url = BASE_URL + "search?q=#{search_term}" + "&from=#{from}"
     data = HTTParty.get(url)
@@ -15,27 +13,19 @@ class  ApiMuncherWrapper
     if data["hits"]
       data["hits"].each do |hit|
         recipe_list << create_recipe(hit["recipe"])
-        #making an array of channel data that will go to the create channel method
       end #
     end
 
-    # return recipe_list
     return recipe_list
   end #method
 
   def self.show_recipe(id)
     puts "Searching for specific recipe"
-    # puts URI.encode(uri)
     puts "#{id}"
-
     search_uri = "http://www.edamam.com/ontologies/edamam.owl" + "\#" + "#{id}"
-
     url = BASE_URL + "search?r=#{URI.encode(search_uri)}"
-    # url = BASE_URL + "search?r=#{uri}"
-    # data = HTTParty.get(url).parsed_response
     data = HTTParty.get(url)
     result = create_recipe(data[0])
-    # create_recipe(hit["recipe"])
 
     return result
   end
@@ -47,12 +37,13 @@ class  ApiMuncherWrapper
     return Recipe.new(
       api_params["uri"],
       api_params["label"],
-      api_params["source"],
-      api_params["image"],
+
 
       {
         # uri: api_params["uri"],
-        url: api_params["url"],
+        image: api_params["image"],
+        source: api_params["source"],
+        # url: api_params["url"],
         shareAs: api_params["shareAs"],
         ingredientLines: api_params["ingredientLines"],
         yield: api_params["yield"],
@@ -65,7 +56,8 @@ class  ApiMuncherWrapper
 
 end #class
 #
-#
+#    # url = BASE_URL + "search?r=#{uri}"
+    # data = HTTParty.get(url).parsed_response
 # @calories = options[:calories]
 # @dietLabels = options[:dietLabels]
 # @healthLabels = options[:healthLabels]

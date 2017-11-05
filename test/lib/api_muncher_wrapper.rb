@@ -16,7 +16,7 @@ describe ApiMuncherWrapper do
 
   describe "show_recipe" do
     it "Will show an individual recipe" do
-      VCR.user_cassette("recipes")
+      VCR.use_cassette("recipes")
       result = ApiMuncherWrapper.show_recipe("id")
     end
   end
