@@ -5,19 +5,20 @@
   <ul class="pagination text-center" role="navigation" aria-label="Pagination">
 
     <% if @from > 10 %>
-    <li id="next"><%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous), class: "button" %></li>
+    <li id="next"><%= link_to "Previous Page", search_path(search_term: @search_term, from: @previous) %></li>
     <% end %>
 
     <!-- <li class="pagination-previous disabled">Previous</li> -->
     <li class="current"><span class="show-for-sr">You're on page</span>1</li>
-    <li class="current"><%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
-    <li><%= link_to "3", search_path(search_term: @search_term, from: 20)%></li>
-    <li><%= link_to "4", search_path(search_term: @search_term, from: 30)%></li>
-    <li><%= link_to "5", search_path(search_term: @search_term, from: 40)%></li>
-    <li><%= link_to "6", search_path(search_term: @search_term, from: 50)%></li>
-    <li><%= link_to "7", search_path(search_term: @search_term, from: 60)%></li>
-    <li><%= link_to "8", search_path(search_term: @search_term, from: 70)%></li>
-    <li><%= link_to "9", search_path(search_term: @search_term, from: 80)%></li>
+    
+    <li class="current"><span class="show-for-sr">You're on page</span>2<%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
+    <li class="current"><%= link_to "3", search_path(search_term: @search_term, from: 20)%></li>
+    <li class="current"><%= link_to "4", search_path(search_term: @search_term, from: 30)%></li>
+    <li class="current"><%= link_to "5", search_path(search_term: @search_term, from: 40)%></li>
+    <li class="current"><%= link_to "6", search_path(search_term: @search_term, from: 50)%></li>
+    <li class="current"><%= link_to "7", search_path(search_term: @search_term, from: 60)%></li>
+    <li class="current"><%= link_to "8", search_path(search_term: @search_term, from: 70)%></li>
+    <li class="current"><%= link_to "9", search_path(search_term: @search_term, from: 80)%></li>
     <li id="next"><%= link_to "Next Page", search_path(search_term: @search_term, from: @from)%></li>
     <!-- <li class="pagination-next"></li> -->
   </ul>

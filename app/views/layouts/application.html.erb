@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
 
-  <body>
+<div class="stick">
 
-    <%= yield %>
+<body>
 
-<footer>
-  <div class="sticky-footer-css">
-    <div class="row expanded flex-dir-column">
-      <div class="columns sticky-footer-css-body text-center">
-        <p>Body Content</p>
+<main>
+
+
+  <%= yield %>
+
+</main>
+  <footer class="marketing-site-footer-bottom">
+      <div class="row">
+        <div class="small-12 medium-6 large-6 columns">
+          <p>&copy; 2017 No rights reserved</p>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+          <p id="edamam-badge" > </p>
+            <!-- <div idata-color="white"></div> -->
+        </div>
       </div>
-
-      <div class="columns shrink footer text-center">
-        <div id="edamam-badge" data-color="white"></div>
-        <p>Footer</p>
-      </div>
-
-    </div>
-  </div>
-</footer>
-
-
-
-
-
+  </footer>
 
   </body>
-</html>
+
+</div>
+  <!-- <div class="stick">
+    <footer>My Footer</footer>
+  </div>
+</div> -->
+
+  </html>
+
+
+
+
+
+<!--
+
+  <footer>
+    <div class="sticky-footer-css">
+      <div class="row expanded flex-dir-column">
+        <div class="columns sticky-footer-css-body text-center">
+          <p>Body Content</p>
+        </div>
+
+        <div class="columns shrink footer text-center">
+
+          <p>Footer</p>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
