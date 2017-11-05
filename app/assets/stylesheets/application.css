@@ -22,7 +22,40 @@ body {
   background-color: #241c11;
 }
 
+/*figure {
+  border: 2px solid green;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+}*/
+
+figure img {
+  margin-left: 15%;
+  margin-right: auto;
+
+}
 /*header */
+
+header {
+  border: 3px dotted pink;
+}
+.top-bar {
+  border: 2px solid orange;
+}
+
+.search-bar {
+  background-color: pink;
+  border: 2px solid black;
+  width: 500px;
+}
+
+.search-bar li {
+  border: 2px solid red;
+  display: inline;
+}
+
+
 
 h1#main-title {
   font-family: 'Courgette', cursive;
@@ -30,8 +63,10 @@ h1#main-title {
 }
 
 h3#main-title {
+  border: 1px solid green;
   font-family: 'Courgette', cursive;
   text-align: left;
+  width: 30%;
 }
 
 h6 {
@@ -108,13 +143,16 @@ h6 {
 
 /*show page */
 
-.main-link {
+h3 #main-link {
+  color: #fdbc6a;
   text-align: center;
 }
 
 .ingredients {
   color: #fdbc6a;
 }
+
+
 
 
 /*footer*/
@@ -156,89 +194,3 @@ main {
   float: right;
   width: 25%;
 }
-
-
-
-
-
-
-
-
-/*.marketing-site-footer-bottom .marketing-site-footer-bottom-links {
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}*/
-
-/*.marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
-  color: #8aa0ae;
-}*/
-
-/*@media screen and (max-width: 63.9375em) {
-  .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-
-@media screen and (max-width: 63.9375em) {
-  .marketing-site-footer-bottom {
-    text-align: center;
-  }
-}*/
-
-/*.marketing-site-footer .marketing-site-footer-menu-social a {
-  color: #fefefe;
-}
-
-.marketing-site-footer .column-block {
-  margin-bottom: 30px;
-}
-
-.marketing-site-footer > .row {
-  margin-bottom: 1rem;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .marketing-site-footer .columns {
-    margin-bottom: 2rem;
-  }
-}*/
-
-/*.marketing-site-footer-name {
-  color: #fefefe;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-.marketing-site-footer-title {
-  color: #fefefe;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}*/
-
-/*.marketing-site-footer-block {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.marketing-site-footer-block .fa {
-  font-size: 2rem;
-  color: #020304;
-}
-
-.marketing-site-footer-block p {
-  margin-left: 1rem;
-  line-height: 1.125rem;
-}*/
-
-/*
-.marketing-site-footer {
-  /*background: #2c3840;*/
-  /*background-color: #fee4c3;
-  color: #8aa0ae;
-  padding: 2rem 0 0;
-}*/

@@ -1,5 +1,21 @@
+<div class="top-bar-left" >
+  <h3 id="main-title">Especially Recipes</h3>
+</div>
+<div class="top-bar-right">
+  <ul class="menu row">
+    <div class="small-12 medium-6 large-6 column">
+    <%= form_tag search_path, method: "get" do %>
+    <li><%#= label_tag(:search, "Enter Search Term")%><%= text_field_tag(:search_term, @search_term)%><%= submit_tag("SEARCH", class: "button") %></li>
+    <% end %>
+    </div>
+  </ul>
+</div>
+    <
 
-    <!-- <li class="pagination-previous disabled">Previous</li> -->
+
+
+
+    !-- <li class="pagination-previous disabled">Previous</li> -->
     <li class="current"><span class="show-for-sr">You're on page</span>1</li>
     <li class="current"><%= link_to "2", search_path(search_term: @search_term, from: 10)%></li>
     <li class="current"><%= link_to "3", search_path(search_term: @search_term, from: 20)%></li>
