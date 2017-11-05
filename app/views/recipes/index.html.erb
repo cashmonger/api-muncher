@@ -1,7 +1,7 @@
 <div class="hero-section">
 
   <div class="hero-section-text">
-    <h1>Especially Recipes</h1>
+    <h1 class="main-title">Especially Recipes</h1>
     <h5>Eat Up!</h5>
 
     <section >
@@ -10,13 +10,10 @@
 
         <fieldset class="recipe-search">
           <%= form_tag search_path, method: "get" do %>
-          <!-- <div class="label"> -->
-            <%#= label_tag(:search, "Enter a Word to Find Tasty Recipes") %>
-          <!-- </div> -->
           <div class="input">
             <%= text_field_tag(:search_term, @search_term) %>
           </div>
-          <div class="form-button">
+          <div class="button alert">
             <%= submit_tag("Press for Tasty Recipes") %>
           </div>
 
@@ -27,3 +24,8 @@
     </section>
   </div>
 </div>
+
+
+<!-- <div class="label"> -->
+  <%#= label_tag(:search, "Enter a Word to Find Tasty Recipes") %>
+<!-- </div> -->

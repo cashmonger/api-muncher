@@ -24,13 +24,26 @@ body {
 
 /*header */
 
+h1#main-title {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+}
+
 h3#main-title {
   font-family: 'Courgette', cursive;
   text-align: left;
 }
 
+h6 {
+  text-align: center;
+}
 
 /*main search page */
+
+.form-button {
+  background-color: orange;
+  color: blue;
+}
 
 .hero-section {
   background-color: orange;
@@ -52,9 +65,11 @@ h3#main-title {
 .hero-section .hero-section-text {
   border: 1px solid green;
   color: #fefefe;
-  font-family: 'Courgette', cursive;
   padding-top: 30px;
-  /*text-shadow: 1px 1px 2px #0a0a0a;*/
+}
+
+.hero-section .hero-section-text h1 {
+  font-family: 'Courgette', cursive;
 }
 
 .hero-section .recipe-search {
@@ -62,12 +77,29 @@ h3#main-title {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
-  width: 30%;
+  width: 35%;
 }
 
 /*search results page */
 .card {
   text-align: center;
+}
+
+.card-divider {
+  border: 2px solid green;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.card h6 {
+  border: 3px solid red;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 1rem;
 }
 
 /*li#next {
@@ -81,43 +113,36 @@ h3#main-title {
 }
 
 .ingredients {
-  /*color: white;*/
   color: #fdbc6a;
 }
 
+
 /*footer*/
+
 .stick {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 
 }
 
 header, nav, footer {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 main {
-          flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
+  flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
 }
 
 
-.marketing-site-footer {
-  /*background: #2c3840;*/
-  background-color: #fee4c3;
-  color: #8aa0ae;
-  padding: 2rem 0 0;
-}
 
-
-.marketing-site-footer-bottom {
-  background-color: #fee4c3;
-  /*background: #020304;*/
+.footer-bottom {
+  background-color: #0b0300;
   padding: 1rem 0;
 }
 
-.marketing-site-footer-bottom p {
-  border: 1px solid green;
+.footer-bottom p {
+  color: #fdbc6a;
   clear: left;
   float: left;
   margin-bottom: 0;
@@ -127,11 +152,17 @@ main {
 /*.marketing-site-footer-bottom p*/
 
 #edamam-badge {
-  border: 1px solid purple;
   clear: right;
   float: right;
   width: 25%;
 }
+
+
+
+
+
+
+
 
 /*.marketing-site-footer-bottom .marketing-site-footer-bottom-links {
   -webkit-justify-content: flex-end;
@@ -202,4 +233,12 @@ main {
 .marketing-site-footer-block p {
   margin-left: 1rem;
   line-height: 1.125rem;
+}*/
+
+/*
+.marketing-site-footer {
+  /*background: #2c3840;*/
+  /*background-color: #fee4c3;
+  color: #8aa0ae;
+  padding: 2rem 0 0;
 }*/
