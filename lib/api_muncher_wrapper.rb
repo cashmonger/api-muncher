@@ -32,9 +32,12 @@ class  ApiMuncherWrapper
 
     url = BASE_URL + "search?r=#{URI.encode(search_uri)}"
     # url = BASE_URL + "search?r=#{uri}"
-    data = HTTParty.get(url).parsed_response
+    # data = HTTParty.get(url).parsed_response
+    data = HTTParty.get(url)
+    result = create_recipe(data[0])
+    # create_recipe(hit["recipe"])
 
-    return data
+    return result
   end
 
 
@@ -51,13 +54,21 @@ class  ApiMuncherWrapper
         # uri: api_params["uri"],
         url: api_params["url"],
         shareAs: api_params["shareAs"],
-        ingredientLines: api_params["ingredientLines"]
+        ingredientLines: api_params["ingredientLines"],
+        yield: api_params["yield"],
+        calories: api_params["calories"],
+        dietLabels: api_params["dietLabels"],
+        healthLabels: api_params["healthLabels"]
       }
     )
   end #method
 
 end #class
-
+#
+#
+# @calories = options[:calories]
+# @dietLabels = options[:dietLabels]
+# @healthLabels = options[:healthLabels]
 # binding.pry
 # url = BASE_URL + "search?r=#{search_uri}"
 # For channels:
@@ -140,16 +151,13 @@ end #class
 #    ["Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free"],
 #   "cautions"=>[],
 #   "ingredientLines"=>
-#    ["6 tbsp hollandaise sauce",
-#     "6 large, very fresh eggs",
-#     "12 slices pancetta, grilled until crisp",
-#     "3 english muffins, split in half horizontally",
-#     "A little butter"],
+#    ["6 tbsp hollandaise sauce", "A little butter"],
 #
-#     "calories"=>3016.378716430664,
-#     "totalNutrients"=> {}
+#   "calories"=>3016.378716430664,
+#   "totalNutrients"=> {}
 #
-#     "weight"=>113.0}],
+#  "weight"=>113.0}],
+
 #  "calories"=>3016.378716430664,
 #  "totalWeight"=>954.0815505981445,
 #  "totalNutrients"=>
