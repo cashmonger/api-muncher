@@ -47,6 +47,28 @@ h6 {
   text-align: center;
 }
 
+
+#search_form {
+  /*border: 3px solid red;*/
+}
+
+#text_input {
+  /*border: 6px solid blue;*/
+  margin-left: 20%;
+  margin-top: 5px;
+  width: 50%;
+  float: left;
+  clear: left:
+}
+
+#submit_button {
+  /*border: 3px solid green;*/
+  float: right;
+  clear: right;
+}
+
+
+
 /*main search page */
 
 h1#main-title {
@@ -116,11 +138,11 @@ h1#main-title {
 /*show page */
 
 .link-background {
-  border: 3px solid orange;
+  /*border: 3px solid orange;*/
 }
 
 #mainlink {
-  border: 6px solid red;
+  /*border: 6px solid red;*/
   color: #fdbc6a;
   margin-top: 5px;
   text-align: center;
