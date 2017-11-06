@@ -39,10 +39,8 @@ class  ApiMuncherWrapper
       api_params["label"],
 
       {
-        # uri: api_params["uri"],
         image: api_params["image"],
         source: api_params["source"],
-        # url: api_params["url"],
         shareAs: api_params["shareAs"],
         ingredientLines: api_params["ingredientLines"],
         yield: api_params["yield"],

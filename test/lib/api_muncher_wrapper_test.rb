@@ -46,15 +46,7 @@ describe ApiMuncherWrapper do
           ApiMuncherWrapper.get_recipes("123456")
         }.must_raise ArgumentError
       end
-    end # it
-
-
-
-
-
-
-
-
+    end 
 
   end
 
