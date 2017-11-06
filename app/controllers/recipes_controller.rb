@@ -1,4 +1,7 @@
 require 'will_paginate/array'
+require_dependency '../../lib/api_muncher_wrapper'
+require_dependency '../../lib/recipe'
+
 
 class RecipesController < ApplicationController
 
@@ -16,7 +19,6 @@ class RecipesController < ApplicationController
 
     # .paginate(:page => params[:page], per_page: 10)
 
-
     unless @results.count > 0
 
       flash[:status] = :failure
@@ -32,9 +34,9 @@ class RecipesController < ApplicationController
     @result = ApiMuncherWrapper.show_recipe(params[:id])
 
     unless @result
-      redirect_to root_path
       flash[:status] = :error
       flash[:message] = "Recipe Not Found"
+      redirect_to root_path
     end
   end
 

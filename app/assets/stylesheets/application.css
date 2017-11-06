@@ -21,7 +21,6 @@
 body {
   background-color:
   #150b02;
-   /*#241c11;*/
 }
 
 a {
@@ -39,14 +38,7 @@ header {
   background-color: #7b644f;
 }
 
-.top-bar {
-  border: 3px solid black;
-  background-color: #7b644f;
-}
-
-
 h2#main-title {
-  border: 1px solid green;
   font-family: 'Courgette', cursive;
   text-align: left;
 }
