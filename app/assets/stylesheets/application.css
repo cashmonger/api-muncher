@@ -55,7 +55,7 @@ h6 {
 #text_input {
   /*border: 6px solid blue;*/
   margin-left: 20%;
-  margin-top: 5px;
+  margin-top: 10px;
   width: 50%;
   float: left;
   clear: left:
@@ -63,6 +63,7 @@ h6 {
 
 #submit_button {
   /*border: 3px solid green;*/
+  margin-top: 10px;
   float: right;
   clear: right;
 }
@@ -137,13 +138,10 @@ h1#main-title {
 
 /*show page */
 
-.link-background {
-  /*border: 3px solid orange;*/
-}
 
 #mainlink {
-  /*border: 6px solid red;*/
   color: #fdbc6a;
+  margin-bottom: 5%;
   margin-top: 5px;
   text-align: center;
 }

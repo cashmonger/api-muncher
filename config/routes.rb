@@ -3,12 +3,7 @@ Rails.application.routes.draw do
   root 'recipes#index', to: 'recipes#index', as: 'root'
 
   get 'recipes/search', to: 'recipes#search', as: 'search'
-  # get 'recipes/show/:uri', to: 'recipes', as: 'recipe'
-  # resources :recipes, except: [:show]
 
-  resources :recipes
+  resources :recipes, only: [:show, :index]
 
 end
-
-# http://localhost:3000/recipes/search
-# ?utf8=%E2%9C%93&search_term=eggs&commit=SEARCH
